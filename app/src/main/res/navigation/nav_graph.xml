@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/launchScreen">
+
+    <fragment
+        android:id="@+id/launchScreen"
+        android:name="com.example.deliveryapp.presentation.launchscreen.LaunchScreenFragment"
+        android:label="fragment_launch_screen"
+        tools:layout="@layout/fragment_launch_screen">
+        <action
+            android:id="@+id/action_launchScreen_to_onBoardingScreens"
+            app:destination="@id/onBoardingScreens" />
+    </fragment>
+    <fragment
+        android:id="@+id/onBoardingScreens"
+        android:name="com.example.deliveryapp.presentation.onboardingscreens.OnBoardingScreens"
+        android:label="fragment_on_boarding_screens"
+        tools:layout="@layout/fragment_on_boarding_screens">
+        <action
+            android:id="@+id/action_onBoardingScreens_to_signInScreen"
+            app:destination="@id/signInScreen" />
+        <action
+            android:id="@+id/action_onBoardingScreens_to_signUpScreen"
+            app:destination="@id/signUpScreen" />
+        <action
+            android:id="@+id/action_onBoardingScreens_to_home_graph"
+            app:destination="@id/home_graph" />
+    </fragment>
+    <fragment
+        android:id="@+id/signInScreen"
+        android:name="com.example.deliveryapp.presentation.signinscreen.SignInScreenFragment"
+        android:label="fragment_sign_in_screen"
+        tools:layout="@layout/fragment_sign_in_screen">
+        <action
+            android:id="@+id/action_signInScreen_to_home_graph"
+            app:destination="@id/home_graph" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpScreen"
+        android:name="com.example.deliveryapp.presentation.signupscreen.SignUpScreenFragment"
+        android:label="fragment_sign_up_screen"
+        tools:layout="@layout/fragment_sign_up_screen">
+        <action
+            android:id="@+id/action_signUpScreen_to_home_graph"
+            app:destination="@id/home_graph" />
+        <action
+            android:id="@+id/action_signUpScreen_to_signInScreen"
+            app:destination="@id/signInScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/onBoardingScreenOne"
+        android:name="com.example.deliveryapp.presentation.onboardingscreens.OnBoardingScreenOneFragment"
+        android:label="fragment_on_boarding_screen_one"
+        tools:layout="@layout/fragment_on_boarding_screen_one" />
+    <fragment
+        android:id="@+id/onBoardingScreenTwo"
+        android:name="com.example.deliveryapp.presentation.onboardingscreens.OnBoardingScreenTwoFragment"
+        android:label="fragment_on_boarding_screen_two"
+        tools:layout="@layout/fragment_on_boarding_screen_two" />
+    <include app:graph="@navigation/home_graph" />
+</navigation>
