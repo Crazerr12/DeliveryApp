@@ -30,4 +30,6 @@
     <string name="veggieTomatoMix">Veggie\ntomato\nmix</string>
     <string name="skip_authorization">Skip Authorization</string>
     <string name="results">Results</string>
+    <string name="search">Search</string>
+    <string name="choose_address">Выберите адрес доставки</string>
 </resources>

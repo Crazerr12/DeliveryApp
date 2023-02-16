@@ -4,10 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.lifecycleScope
+import com.example.deliveryapp.data.api.RetrofitInstance
 import com.example.deliveryapp.data.storage.SharedPrefUserStorage
 import com.example.deliveryapp.databinding.FragmentCategoryBinding
 import com.example.deliveryapp.presentation.base.BaseFragment
 import com.example.deliveryapp.presentation.models.DishModel
+import kotlinx.coroutines.launch
 
 class CategoryFragment(
     private val position: Int,

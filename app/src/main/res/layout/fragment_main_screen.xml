@@ -6,25 +6,65 @@
     android:layout_height="match_parent"
     tools:context=".presentation.mainscreens.MainScreenFragment">
 
+    <ImageView
+        android:id="@+id/imageSearch"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:padding="10dp"
+        android:src="@drawable/search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_marginEnd="40dp"
+        android:padding="10dp"
+        android:id="@+id/imageSend"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/send"
+        app:layout_constraintEnd_toStartOf="@+id/imageSearch"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/addressInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/imageSend"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:hint="@string/choose_address"
+            android:textSize="18sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
     <androidx.appcompat.widget.SearchView
-        android:focusable="true"
         android:id="@+id/searchView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/search_shape"
+        app:iconifiedByDefault="true"
+        app:searchIcon="@null"
+        app:searchHintIcon="@null"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@+id/imageSearch"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/result"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/results"
         android:fontFamily="@font/italianno"
-        android:visibility="gone"
+        android:text="@string/results"
         android:textSize="48sp"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageSearch" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
